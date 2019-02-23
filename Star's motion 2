@@ -1,0 +1,55 @@
+%Stellar Motion%
+%Determine a star's motion by calculating the redshift in its spectrum, using the Hydrogen-alpha () line.%
+
+%Load data and define measurement parameters%
+
+load starData
+nObs = size(spectra,1);
+lambdaStart = 630.02;
+lambdaDelta = 0.14;
+
+%Create vector of wavelengths%
+
+lambdaEnd = lambdaStart + (nObs-1)*lambdaDelta;
+lambda = (lambdaStart:lambdaDelta:lambdaEnd)';
+
+%Extract spectrum of HD10032%
+%Extract the appropriate column of spectra%
+
+s = spectra(:,2);
+
+%Plot the spectrum%
+
+loglog(lambda,s,'.-')
+xlabel('Wavelength')
+ylabel('Intensity')
+
+%Find the wavelength of the Hydrogen-alpha line%
+%Find the minimum spectral value and corresponding wavelength%
+
+[sHa,idx] = min(s);
+lambdaHa = lambda(idx);
+
+%Add Hydrogen-alpha to spectrum plot%
+
+hold on
+loglog(lambdaHa,sHa,'rs','MarkerSize',8)
+hold off
+
+%Determine the redshift & stellar motion%
+
+z = lambdaHa/656.28 - 1;
+speed = z*299792.458
+
+
+*************************************************************************************************************************************
+CONCLUSION:
+
+Using a MATLAB script, we can easily calculate the red shift for any star in the data set. 
+We could even perform the same operations for all of the stars in the collected data set.
+
+However, we have found the Hydrogen-alpha wavelength of the star by finding the minimum value of the spectral intensities (s). 
+For some stars, the Hydrogen-alpha line occurs at the maximum intensity value, rather than the minimum. 
+Therefore, a more robust approach is to find the maximum anomaly (difference from the mean), 
+rather than the maximum or minimum spectral value. 
+The anomaly is defined as the absolute value of the difference between s and mean(s).
