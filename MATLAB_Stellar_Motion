@@ -2,6 +2,7 @@ The spectra data was collected at evenly-spaced wavelengths, and you know the st
 the spacing (λdelta), and the number of observations.
 
 Each column of spectra is the spectrum of a different star. The sixth column is the spectrum of star HD 94028.
+
 loglog function is used in the same way as the plot function to obtain log scales for both axes.
 sHa and idx - contain the minimum value of s and the index where the minimum value occurred.
 Use idx to index into lambda to find the wavelength of the Hydrogen-alpha line. Store the result as lambdaHa (λHa)
