@@ -7,8 +7,6 @@ loglog function is used in the same way as the plot function to obtain log scale
 sHa and idx - contain the minimum value of s and the index where the minimum value occurred.
 Use idx to index into lambda to find the wavelength of the Hydrogen-alpha line. Store the result as lambdaHa (λHa)
 
-
-
 /***********************************************************************************************************************************/
 INPUT CODE:
 /***********************************************************************************************************************************/
