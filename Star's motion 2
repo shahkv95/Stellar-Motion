@@ -4,7 +4,6 @@
 % Determine a star's motion by calculating the redshift in its spectrum, using the Hydrogen-alpha () line. %
 
 
-
 % Load data and define measurement parameters %
 
 load starData
