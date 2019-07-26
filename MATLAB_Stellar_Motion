@@ -10,6 +10,7 @@ Use idx to index into lambda to find the wavelength of the Hydrogen-alpha line. 
 /***********************************************************************************************************************************/
 INPUT CODE:
 /***********************************************************************************************************************************/
+
 lambdaEnd = lambdaStart + (nObs - 1) * lambdaDelta
 lambda = (lambdaStart:lambdaDelta:lambdaEnd)'
 s = spectra(:,6)
